@@ -259,13 +259,20 @@ ul.task-list li input[type="checkbox"] {
 <p>U ustanovi za lečenje popunjava se jedan i samo jedan obrazac po klijentu svake godine. Menadžment ustanove će se starati o saradnji između centara u ustanovama gde postoji veći broj centara za lečenje, tako da samo prvi kontakt s centrom za lečenje unutar iste ustanove tokom te kalendarske godine bude registrovan, a izveštaj popunjen i dostavljen na predviđeni način u predviđenom roku (grafikon 1).</p>
 <section id="grafikon-1.-procedura-popunjavanje-prijave" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="grafikon-1.-procedura-popunjavanje-prijave">Grafikon 1. Procedura popunjavanje prijave</h2>
+<!--
+Ovaj je deo obavezan kod prebacivanja na sajt. Bez njega grafikon nece da radi
+-->
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true});
+    </script>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <div>
 <pre class="mermaid mermaid-js">flowchart TD
     A[Klijent dolazi u centar za lečenje] --&gt; B[Da li klijent dolazi zbog lečenja bolesti zavisnosti]
-    B -- da --&gt; C[Da li je uzrok problematična &lt;br/&gt; upotreba alkohola i ostalih &lt;br/&gt; supstanci ne uključuje duvan &lt;br/&gt; ili problem kokcanja?]
+    B -- da --&gt; C["Da li je uzrok problematična &lt;br/&gt; upotreba alkohola i ostalih &lt;br/&gt; supstanci (ne uključuje duvan) &lt;br/&gt; ili problem kokcanja?"]
     C --&gt;|ne| I&gt;Ne popunjava se prijva]
     B -- ne --&gt; G&gt;Ne popunjava se prijva]
     C --&gt;|da| D[Da li je ovo prva poseta &lt;br/&gt; klijenta ovom centru za lečenje u &lt;br/&gt; ovoj kalendarskoj godini?]
